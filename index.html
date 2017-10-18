@@ -180,7 +180,8 @@ DOWNLOAD NOW
     
           </div>
           <!-- END ROW -->
-    
+
+
         </div>
         <!-- /END CONTAINER -->
       </div>
@@ -190,6 +191,48 @@ DOWNLOAD NOW
     <!-- /END DOWNLOAD SECTION -->
     
     
+
+
+          <!-- =========================
+          BRIEF RIGHT SECTION
+          ============================== -->
+          <section class="app-brief" id="concept">
+
+            <div class="container">
+
+              <div class="row">
+
+                <!-- BRIEF -->
+                <div class="col-md-12 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
+
+                  <h3 class="dark-text">Configuration</h3>
+                  
+                  <p>The following code shows how to configure Apache to redirect some bots to sparender for karibou.ch website. Note that <i>_escaped_fragment_</i> will be automatically added by some bots (such as Google bot) if your index.html contains the meta tag: &lt;meta name="fragment" content="!"> inside the head tag. 
+                  Similar configurations can be found for other HTTP servers.
+                  </p>
+
+<pre><code>&lt;IfModule mod_rewrite.c>
+RewriteEngine On
+
+  &lt;IfModule mod_proxy_http.c>
+    RewriteCond %{HTTP_USER_AGENT} googlebot|yandexbot|baidupsider|bot|crawler|spider|pingdom|monitis|teoma|facebook|bing|yahoo|embedly|quora|outbrain|pinterest|vkshare|validator [NC,OR]
+    RewriteCond %{QUERY_STRING} _escaped_fragment_
+                              
+    # Proxy HTTP requests to sparender, only if it's a request for HTML
+    RewriteRule ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff))(.*) http://test.sparender.com/http://karibou.ch%{REQUEST_URI} [P]
+  &lt;/IfModule>
+
+&lt;/IfModule></code></pre>
+
+                  
+              </div>
+            <!-- /END PHONES IMAGE -->
+
+          </div>
+          <!-- /END ROW -->
+
+      </section>
+      <!-- /END SECTION -->
  
           <!-- =========================
           BRIEF RIGHT SECTION
