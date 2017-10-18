@@ -13,7 +13,7 @@ jQuery(window).load(function() {
 function callSparender(){
     var website = $("#website").val();
     gtag('event', 'search', {'search_term': website, 'search_query': website});
-    window.open("http://demo.sparender.com/" + website, '_blank');
+    window.open("http://test.sparender.com/" + website, '_blank');
 }
 
 /* =================================
