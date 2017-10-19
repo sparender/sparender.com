@@ -138,7 +138,7 @@
             
             <h3 class="dark-text">How does it work?</h3>
             
-            <p>Sparender works because it understands and executes the Javascript complexity of your SPA and renders <strong>only plain HTML for bots</strong>. In this way, robots will easily crawl and index your page content. This process is done on the fly and only requires a minimal configuration on the server side.
+            <p>For each requested page, Sparender interprets the corresponding Javascript, creates the HTML document according to the Javascript/SPA framework, and returns to the client <strong>only HTML (without javascript)</strong>. The trick is then to redirect robots requests to sparender; sparender will do the complicated task of interpreting the javascript and rendering the document, and the bot can index your page happily by reading the plain HTML with the whole content already in there. This process is done on the fly and only requires a minimal configuration on the server side. See it in action:
 
           </div>
           <!-- /END RIGHT BRIEF -->
@@ -160,7 +160,7 @@ DOWNLOAD NOW
 
 <section class="download" id="download">
 
-      <h3 class="dark-text">Test it</h3>
+      <h3 class="dark-text">Test it with your website:</h3>
       <div>
           
         <div class="container">
@@ -178,8 +178,8 @@ DOWNLOAD NOW
 
             <div class="col-md-10 col-md-offset-1">
               <p style="color:black; font-size: 12px; line-height: 20px;">Note that you are testing your website against a test server, which has some limitations and long delays. You may need to wait around 15 seconds to get a response for a new page. <a href="mailto:hello@sparender.com">Contact us</a> in case you don't want to maintain an in-house installation and would like to have a production environment tunned specifically for your website.</p>
-
             </div>
+
 
             <!-- END COLUMN -->
 
@@ -196,6 +196,26 @@ DOWNLOAD NOW
     <!-- /END DOWNLOAD SECTION -->
     
     
+    <section class="app-brief" id="search">
+     <div class="container">
+        <div class="row">
+          <!-- RIGHT SIDE WITH BRIEF -->
+          <div class="col-md-12 left-align">
+            <p>If you have clicked on the TEST button you probably got a very similar page compared to the original. In fact, the idea is to create the same page, but with a different "raw" content. You can understand this by looking at the source code of the page (on Google Chrome, right click -> View Page Source). In the case of the original page you will probably get the root index.html with some javascript libraries / frameworks such as angular.js. There will be no text content related to the page itself, because everything is redirected to the root index.html. While in the second case with sparender, you will find a much richer content and no javascript at all. And guess what, that's what robots love: <b>Plain text without Javascript.</b>
+            </p>
+
+            <p>You can also notice that using your terminal:</p>
+
+<p>A) In this case (without sparender) the page returned is index.html without the word "produits" (any url will return the same page = index.html via curl)</p>            
+<pre><code>curl https://karibou.ch/products/category/fruits-legumes | grep produits</pre></code>
+
+<p>B) In this case (with sparender) the page returned corresponds to the one we see in the browser and the grep returns several matches!</p>            
+<pre><code>curl http://test.sparender.com/https://karibou.ch/products/category/fruits-legumes | grep produits</pre></code>
+
+          </div>
+        </div> 
+      </div>
+    </section>
 
 
           <!-- =========================
