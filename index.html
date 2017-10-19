@@ -138,7 +138,7 @@
             
             <h3 class="dark-text">How does it work?</h3>
             
-            <p>For each requested page, Sparender interprets the corresponding Javascript, creates the HTML document according to the Javascript/SPA framework, and returns to the client <strong>only HTML (without javascript)</strong>. The trick is then to redirect robots requests to sparender; sparender will do the complicated task of interpreting the javascript and rendering the document, and the bot can index your page happily by reading the plain HTML with the whole content already in there. This process is done on the fly and only requires a minimal configuration on the server side. See it in action:
+            <p>For each requested page, Sparender interprets the corresponding Javascript, creates the HTML document according to the Javascript/SPA framework, and returns to the client <strong>only HTML (without javascript)</strong>. The trick is then to redirect robots requests to sparender; sparender will do the complicated task of interpreting the javascript and rendering the document. Once sparender has finished, the bot can read the plain HTML content returned from sparender and index the page happily with all content already in there. This process is done on the fly and only requires a minimal configuration on the server side. See it in action:
 
           </div>
           <!-- /END RIGHT BRIEF -->
